@@ -42,9 +42,16 @@ class HeavyRain extends CityBuilder
 
             for ($j = 0; $j < $cityWidth; $j++)
             {
+                $leftBorder = max(array_slice($city, 0, $j + 1));
+                $rightBorder = max(array_slice($city, $j));
+
                 if ($city[$j] >= $cityHeight - $i)
                 {
                     echo '<td style="border: 1px solid #45811e; background-color: #85d652; width: 30px; height: 30px; text-align: center; color: #244624;"><small>' . ($cityHeight - $i) . '</small></td>';
+                }
+                elseif (min($leftBorder, $rightBorder) >= ($cityHeight - $i))
+                {
+                    echo '<td style="border: 1px solid #032e52; background-color: #2092f4; width: 30px; height: 30px; color: #032e52; text-align: center;"><small>' . (min($leftBorder, $rightBorder) - $city[$j]) . '</small></td>';
                 }
                 else
                 {
