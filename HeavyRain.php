@@ -17,6 +17,8 @@ class HeavyRain extends CityBuilder
 
         /* add your code here */
 
+        $cityWidth = count($city);
+
         $this->drawCity($city);
 
         echo json_encode($city) . " => " . $result . "\n";
@@ -29,6 +31,11 @@ class HeavyRain extends CityBuilder
 
         echo '<table>';
 
+        for ($i = 0; $i < $cityWidth; $i++)
+        {
+            echo '<td style="text-align: center; border: 1px solid #94a494;">' . $city[$i] . '</td>';
+        }
+
         for ($i = 0; $i < $cityHeight; $i++)
         {
             echo '<tr>';
@@ -37,11 +44,11 @@ class HeavyRain extends CityBuilder
             {
                 if ($city[$j] >= $cityHeight - $i)
                 {
-                    echo '<td style="border: 1px solid #45811e; background-color: #85d652; width: 20px; height: 20px;"></td>';
+                    echo '<td style="border: 1px solid #45811e; background-color: #85d652; width: 30px; height: 30px; text-align: center; color: #244624;"><small>' . ($cityHeight - $i) . '</small></td>';
                 }
                 else
                 {
-                    echo '<td style="border: 1px solid #ffffff; width: 20px; height: 20px;"></td>';
+                    echo '<td style="border: 1px solid #ffffff; width: 30px; height: 30px;"></td>';
                 }
             }
 
@@ -50,9 +57,9 @@ class HeavyRain extends CityBuilder
 
         echo '<tr>';
         
-        for ($j = 0; $j < $cityWidth; $j++)
+        for ($i = 0; $i < $cityWidth; $i++)
         {
-            echo '<td style="text-align: center; border-top: 5px solid #2092f4;">' . ($j % 10) . '</td>';
+            echo '<td style="text-align: center; border: 1px solid #2092f4; border-top: 5px solid #2092f4;">' . $i . '</td>';
         }
 
         echo '</tr></table>';
