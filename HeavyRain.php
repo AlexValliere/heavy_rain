@@ -63,5 +63,13 @@ class HeavyRain extends CityBuilder
         }
 
         echo '</tr></table>';
+
+        for ($i = 0; $i < $cityWidth; $i++)
+        {
+            $leftBorder = max(array_slice($city, 0, $i + 1));
+            $rightBorder = max(array_slice($city, $i));
+
+            echo "Current position is $i and left border size is $leftBorder and right border size is $rightBorder<br />";
+        }
     }
 }
