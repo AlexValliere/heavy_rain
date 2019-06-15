@@ -19,7 +19,7 @@ class HeavyRain extends CityBuilder
 
         $cityWidth = count($city);
 
-        $this->drawCity($city);
+        // $this->drawCity($city);
 
         for ($j = 0; $j < $cityWidth; $j++)
         {
