@@ -21,6 +21,30 @@ class HeavyRain extends CityBuilder
 
         $this->drawCity($city);
 
+        for ($j = 0; $j < $cityWidth; $j++)
+        {
+            $leftBorder = max(array_slice($city, 0, $j + 1));
+            $rightBorder = max(array_slice($city, $j));
+            $waterPoolSize = 0;
+            $waterPoolSizeOnCurrentIndex = min($leftBorder, $rightBorder) - $city[$j];
+
+            while ($waterPoolSizeOnCurrentIndex > 0)
+            {
+                $leftBorder = max(array_slice($city, 0, $j + 1));
+                $rightBorder = max(array_slice($city, $j));
+                $waterPoolSizeOnCurrentIndex = min($leftBorder, $rightBorder) - $city[$j];
+                $waterPoolSize += $waterPoolSizeOnCurrentIndex;
+                $j++;
+            }
+
+            if ($waterPoolSize > $result)
+            {
+                $result = $waterPoolSize;
+            }
+
+            $waterPoolSize = 0;
+        }
+
         echo json_encode($city) . " => " . $result . "\n";
     }
 
