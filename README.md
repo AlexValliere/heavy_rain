@@ -29,3 +29,6 @@ My code to solve the problem was the following:
 I look the table with the city from left to right.
 For each position n, I look where are the borders and then calculate how much water the position n can contain.
 If the position n have water, I use a while loop to look for the next positions with water and I start adding up the water from position n (waterPoolSizeOnCurrentIndex) and from the following positions and put the result in a variable waterPoolSize. When no water is found, I get out of the while loop and if waterPoolSize is bigger than the variable result, I copy the content of the first one to this last variable.
+
+# Enabling HTML city viewer with rain
+In the file HeavyRain.php, line 22 ( // $this->drawCity($city); ), remove the comment code: //
