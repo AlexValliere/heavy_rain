@@ -37,11 +37,11 @@ class HeavyRain extends CityBuilder
             {
                 if ($city[$j] >= $cityHeight - $i)
                 {
-                    echo '<td style="border: 1px solid #45811e; background-color: #85d652; width: 10px; height: 10px;"></td>';
+                    echo '<td style="border: 1px solid #45811e; background-color: #85d652; width: 20px; height: 20px;"></td>';
                 }
                 else
                 {
-                    echo '<td style="border: 1px solid #ffffff; width: 10px; height: 10px;"></td>';
+                    echo '<td style="border: 1px solid #ffffff; width: 20px; height: 20px;"></td>';
                 }
             }
 
